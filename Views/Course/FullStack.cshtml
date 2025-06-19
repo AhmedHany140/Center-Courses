@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "FullStack";
+    var isParticipant = User.IsInRole("FullStack"); 
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .enroll-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .message {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            color: red;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .contact-btn {
+            display: none;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            .contact-btn:hover {
+                background-color: darkblue;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Full Stack Development</h1>
+    </header>
+    <main>
+      
+        <section>
+            <h2>1. Overview of Full Stack Development</h2>
+            <ul>
+                <li>What is Full Stack Development?</li>
+                <li>Front-End and Back-End Integration</li>
+                <li>Overview of Technologies Used</li>
+            </ul>
+        </section>
+        <section>
+            <h2>2. Project Setup and Development Environment</h2>
+            <ul>
+                <li>Setting up a Development Environment</li>
+                <li>Version Control (Git)</li>
+                <li>Continuous Integration/Deployment (CI/CD)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>3. Building a Full Stack Application</h2>
+            <ul>
+                <li>Front-End Development</li>
+                <li>Back-End Development</li>
+                <li>Connecting Front-End with Back-End</li>
+                <li>Database Integration</li>
+                <li>Authentication and Authorization</li>
+            </ul>
+        </section>
+        <section>
+            <h2>4. Testing and Debugging</h2>
+            <ul>
+                <li>Unit Testing (Front-End and Back-End)</li>
+                <li>Integration Testing</li>
+                <li>Debugging Techniques</li>
+            </ul>
+        </section>
+        <section>
+            <h2>5. Deployment and Scaling</h2>
+            <ul>
+                <li>Deploying Applications (Heroku, AWS, Azure)</li>
+                <li>Monitoring and Logging</li>
+                <li>Scaling and Performance Optimization</li>
+            </ul>
+        </section>
+
+     
+        <button class="enroll-btn" onclick="handleEnroll()">Join Now</button>
+
+        
+        <div class="message" id="message">
+            You must send a cost of course to Vodafone Cash at number 01095647382, and after that, call a secretary to add you to the list of students in this course.
+        </div>
+
+      
+        <a class="contact-btn" id="contact-btn" asp-area="" asp-controller="Message" asp-action="Index" asp-route-RecieverType="Secertary" asp-route-coursename="fullstack">Call Us</a>
+
+    </main>
+
+    <footer>
+        <p>© 2024 Your Course Platform</p>
+    </footer>
+
+    <script>
+        function handleEnroll() {
+            var isParticipant = @Html.Raw(Json.Serialize(isParticipant));
+
+            if (isParticipant) {
+                window.location.href = '@Url.Action("Fullstackpage", "Course")'; 
+            } else {
+                var messageDiv = document.getElementById('message');
+                var contactBtn = document.getElementById('contact-btn');
+                messageDiv.style.display = 'block'; 
+                contactBtn.style.display = 'inline-block'; 
+            }
+        }
+    </script>
+</body>
+</html>

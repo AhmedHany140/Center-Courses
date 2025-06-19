@@ -1,0 +1,142 @@
+﻿@{
+    ViewData["Title"] = "FrontEnd";
+    var isParticipant = User.IsInRole("FrontEnd");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front End Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .enroll-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .message {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            color: red;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .contact-btn {
+            display: none;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            .contact-btn:hover {
+                background-color: darkblue;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Front End Development</h1>
+    </header>
+    <main>
+      
+        <section>
+            <h2>1. HTML</h2>
+            <ul>
+                <li>Introduction to HTML</li>
+                <li>Basic Structure</li>
+                <li>HTML Elements and Attributes</li>
+                <li>Forms and Input</li>
+                <li>HTML5 Semantic Elements</li>
+                <li>Multimedia Elements (Images, Video, Audio)</li>
+                <li>Accessibility and SEO</li>
+            </ul>
+        </section>
+        <section>
+            <h2>2. CSS</h2>
+            <ul>
+                <li>Introduction to CSS</li>
+                <li>Selectors and Properties</li>
+                <li>Box Model</li>
+                <li>Flexbox</li>
+                <li>Grid Layout</li>
+                <li>Responsive Design</li>
+                <li>Advanced Styling (Animations, Transitions)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>3. JavaScript</h2>
+            <ul>
+                <li>Introduction to JavaScript</li>
+                <li>Variables and Data Types</li>
+                <li>Functions and Scope</li>
+                <li>DOM Manipulation</li>
+                <li>Events</li>
+                <li>Asynchronous JavaScript (Promises, Async/Await)</li>
+                <li>ES6+ Features</li>
+            </ul>
+        </section>
+        <section>
+            <h2>4. Frameworks and Libraries</h2>
+            <ul>
+                <li>Introduction to Frameworks</li>
+                <li>React Basics</li>
+                <li>State Management</li>
+                <li>Component Lifecycle</li>
+                <li>Introduction to Vue.js or Angular (optional)</li>
+                <li>Styling Libraries (Bootstrap, Materialize)</li>
+            </ul>
+        </section>
+
+      
+        <button class="enroll-btn" onclick="handleEnroll()">Join Now</button>
+
+    
+        <div class="message" id="message">
+            You must send a cost of course to Vodafone Cash at number 01095647382, and after that, call a secretary to add you to the list of students in this course.
+        </div>
+
+
+
+        <a class="contact-btn" id="contact-btn" asp-area="" asp-controller="Message" asp-action="Index" asp-route-RecieverType="Secertary" asp-route-coursename="frontend">Call Us</a>
+
+    </main>
+
+    <footer>
+        <p>© 2024 Your Course Platform</p>
+    </footer>
+
+    <script>
+        function handleEnroll() {
+            var isParticipant = @Html.Raw(Json.Serialize(isParticipant)); 
+
+            if (isParticipant) {
+                window.location.href = '@Url.Action("Frontpage", "Course")'; 
+            } else {
+                var messageDiv = document.getElementById('message');
+                var contactBtn = document.getElementById('contact-btn');
+                messageDiv.style.display = 'block'; 
+                contactBtn.style.display = 'inline-block';
+            }
+        }
+    </script>
+</body>
+</html>

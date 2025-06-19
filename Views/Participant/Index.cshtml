@@ -1,0 +1,46 @@
+﻿@using CenterDragon.Models.Entites
+
+@model List<Participants>
+
+<div>
+    <h4>Participants</h4>
+    <hr />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Education</th>
+                <th>Address</th>
+                <th>Course Name</th> 
+                <th>Instructor Name</th> 
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var participant in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => participant.FullName)</td>
+                    <td>@Html.DisplayFor(modelItem => participant.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => participant.Age)</td>
+                    <td>@Html.DisplayFor(modelItem => participant.Ediation)</td>
+                    <td>@Html.DisplayFor(modelItem => participant.Adress)</td>
+                    <td>@Html.DisplayFor(modelItem => participant.Course.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => participant.Instractor.Name)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@participant.Id" class="btn btn-primary">Edit</a>
+                        <a asp-action="Details" asp-route-id="@participant.Id" class="btn btn-info">Details</a>
+                        <a asp-action="Delete" asp-route-id="@participant.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Index" asp-controller="Secrtary" class="btn btn-secondary">Back to List</a>
+
+</div>

@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "BackEnd";
+    var isParticipant = User.IsInRole("BackEnd");
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back End Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .enroll-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .message {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            color: red;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .contact-btn {
+            display: none;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            .contact-btn:hover {
+                background-color: darkblue;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Back End Development</h1>
+    </header>
+    <main>
+        <section>
+            <h2>1. Introduction to Back End Development</h2>
+            <ul>
+                <li>What is Back End Development?</li>
+                <li>Role of Servers and Databases</li>
+                <li>APIs and Data Processing</li>
+                <li>Overview of Back End Technologies</li>
+            </ul>
+        </section>
+        <section>
+            <h2>2. Server-Side Programming</h2>
+            <ul>
+                <li>Introduction to Server-Side Languages</li>
+                <li>Node.js Basics</li>
+                <li>Express.js for Server Setup</li>
+                <li>Handling HTTP Requests and Responses</li>
+                <li>Session Management</li>
+            </ul>
+        </section>
+        <section>
+            <h2>3. Working with Databases</h2>
+            <ul>
+                <li>Introduction to Databases</li>
+                <li>SQL vs NoSQL</li>
+                <li>Connecting to Databases (MySQL, MongoDB)</li>
+                <li>Database Operations (CRUD)</li>
+                <li>Database Security and Optimization</li>
+            </ul>
+        </section>
+        <section>
+            <h2>4. Building RESTful APIs</h2>
+            <ul>
+                <li>What is an API?</li>
+                <li>REST Architecture</li>
+                <li>Building a Simple REST API with Node.js</li>
+                <li>Authentication and Authorization in APIs</li>
+            </ul>
+        </section>
+        <section>
+            <h2>5. Testing and Debugging Back End Applications</h2>
+            <ul>
+                <li>Unit Testing and Integration Testing</li>
+                <li>Debugging Techniques for Back End</li>
+                <li>Logging and Error Handling</li>
+            </ul>
+        </section>
+
+        <button class="enroll-btn" onclick="handleEnroll()">Enroll Now</button>
+
+        <div class="message" id="message">
+            You must send a cost of course to Vodafone Cash at number 01095647382, and after that, call a secretary to add you to the list of students in this course.
+        </div>
+
+        <a class="contact-btn" id="contact-btn" asp-area="" asp-controller="Message" asp-action="Index" asp-route-RecieverType="Secertary" asp-route-coursename="backend">Call Us</a>
+
+    </main>
+
+    <footer>
+        <p>© 2024 Your Course Platform</p>
+    </footer>
+
+    <script>
+        function handleEnroll() {
+            var isParticipant = @Html.Raw(Json.Serialize(isParticipant));
+
+            if (isParticipant) {
+                window.location.href = '@Url.Action("CoursePage", "Course")';
+            } else {
+                var messageDiv = document.getElementById('message');
+                var contactBtn = document.getElementById('contact-btn');
+                messageDiv.style.display = 'block';
+                contactBtn.style.display = 'inline-block';
+            }
+        }
+    </script>
+</body>
+</html>

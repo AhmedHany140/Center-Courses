@@ -1,0 +1,163 @@
+﻿@using CenterDragon.Data
+@using CenterDragon.Models.Entites
+@inject ApplicationDbContext context;
+
+@{
+    ViewData["Title"] = "ShowMessages";
+}
+
+@{
+    Dictionary<string, List<string>> AllMessages = ViewBag.allmessages;
+
+
+    List<Student> Students = new List<Student>();
+    List<Student> students = context.Students.ToList();
+    foreach (var s in students)
+    {
+        if (!(context.participants.Any(x => x.Email == s.Email)))
+        {
+            Students.Add(s);
+        }
+    }
+}
+
+  @if (User.Claims.Any(c => c.Type == "Secertary"))
+  {
+
+    <div class="container mt-5">
+
+    <div class="row mb-4">
+        <div class="col-lg-12">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-info text-white">
+                    <h5 class="card-title mb-0">Students That Are Not Participants</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Age</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var student in Students)
+                            {
+                                <tr>
+                                    <td>@student.FullName</td>
+                                    <td>@student.Email</td>
+                                    <td>@student.Age</td>
+                                    <td>@student.Adress</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  
+    
+
+    
+</div>
+    <div>
+        <a class="btn btn-primary" asp-area="" asp-controller="Secrtary" asp-action="Index">Back</a>
+    </div>
+
+   
+  }
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="text-center mb-4">Messages</h2>
+        @if (AllMessages != null && AllMessages.Any())
+        {
+            @foreach (var vKey in AllMessages.Keys)
+            {
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">Message from @vKey</h5>
+                    </div>
+                    <div class="card-body">
+                        @foreach (var v in AllMessages[vKey])
+                        {
+                            <p class="card-text">@v</p>
+                            <div class="d-flex justify-content-between">
+                                <a class="btn btn-outline-primary" asp-area="" asp-controller="Message" asp-action="Index" asp-route-RecieverType="@vKey" asp-route-Contentvalue="@v">
+                                    Call us
+                                </a>
+                                <span class="text-muted">Sent by @vKey</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="alert alert-info text-center">
+                There are no messages.
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .card-header {
+        border-bottom: 2px solid #ddd;
+    }
+
+    .table {
+        margin-top: 1rem;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        .table th,
+        .table td {
+            text-align: center;
+            padding: 0.75rem;
+            vertical-align: middle;
+        }
+
+    .table-bordered {
+        border: 1px solid #dee2e6;
+    }
+
+        .table-bordered th,
+        .table-bordered td {
+            border: 1px solid #dee2e6;
+        }
+
+    .thead-dark th {
+        background-color: #343a40;
+        color: #fff;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f2f2f2;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #e9ecef;
+    }
+
+    .btn-outline-primary {
+        border-color: #007bff;
+        color: #007bff;
+    }
+
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+</style>

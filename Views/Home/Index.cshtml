@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Course Center";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/site.css"> 
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, Student!<h1>
+        <div class="courses">
+            <div class="course-card">
+                <h2>FrontEnd</h2>
+                <p>You will learn How can Create a  Websites of track FrontEnd Development</p>
+                <a asp-controller="Course" asp-action="FrontEnd" class="btn">View Details</a>
+            </div>
+            <div class="course-card">
+                <h2>BackEnd</h2>
+                <p>You Will Learn How You can Create a Back Ends of Websites and Api </p>
+                        <a asp-controller="Course" asp-action="BackEndEnd" class="btn">View Details</a>
+            </div>
+            <div class="course-card">
+                <h2>FullStack</h2>
+                <p>You will Learn How you can create a Completed WebSite</p>
+                <a asp-controller="Course" asp-action="FullStack" class="btn">View Details</a>
+                
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
