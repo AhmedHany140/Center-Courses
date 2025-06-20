@@ -1,211 +1,196 @@
-﻿using CenterDragon.Data;
+﻿using AutoMapper;
+using CenterDragon.Data;
 using CenterDragon.Interfaces;
 using CenterDragon.Models.Entites;
-using CenterDragon.Reposatories;
 using CenterDragon.View_Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.FlowAnalysis.DataFlow;
 
 namespace CenterDragon.Controllers
 {
-    public class ParticipantController : Controller
-    {
-        private readonly IStudent participantReposatory;
-        private readonly UserManager<ApplicationUser> userManager;
+	/// <summary>
+	/// Controller responsible for managing participants and their related operations.
+	/// </summary>
+	public class ParticipantController : Controller
+	{
+		private readonly IParticipantRepository _participantRepository;
+		private readonly UserManager<ApplicationUser> _userManager;
+		private readonly IMapper _mapper;
 
-        public ParticipantController(IStudent _ParticipantReposatory, UserManager<ApplicationUser> userManager)
-        {
-            participantReposatory = _ParticipantReposatory;
-            this.userManager = userManager;
-        }
-        public async Task< IActionResult> Index()
-        {
-            var partis= participantReposatory.GetAll();
-            return View("Index", partis);
-        }
-        public async Task< IActionResult> Add()
-        {
-            var partis = new Participants();
-            var courses=new List< Course>();
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ParticipantController"/> class.
+		/// </summary>
+		/// <param name="participantRepository">The participant repository.</param>
+		/// <param name="userManager">The user manager for application users.</param>
+		/// <param name="mapper">The AutoMapper instance.</param>
+		public ParticipantController(
+			IParticipantRepository participantRepository,
+			UserManager<ApplicationUser> userManager,
+			IMapper mapper)
+		{
+			_participantRepository = participantRepository;
+			_userManager = userManager;
+			_mapper = mapper;
+		}
 
-            var partcourse = new participantViewModel();
+		/// <summary>
+		/// Displays a list of all participants.
+		/// </summary>
+		/// <returns>The Index view with the list of participants.</returns>
+		public async Task<IActionResult> Index()
+		{
+			var participants = _participantRepository.GetAll();
+			return View(participants);
+		}
 
-            partcourse.Id = partis.Id;
-            partcourse.Adress=partis.Adress;
-            partcourse.Age= partis.Age;
-            partcourse.Email=partis.Email;
-            partcourse.FullName=partis.FullName;
-            partcourse.Ediation=partis.Ediation;
-            partcourse.ParCourseId=partis.CourseId;
-            if(participantReposatory.AllCourses()  != null) 
-            partcourse.Courselist = participantReposatory.AllCourses();
+		/// <summary>
+		/// Displays the form to add a new participant.
+		/// </summary>
+		/// <returns>The Add view with the participant view model.</returns>
+		public async Task<IActionResult> Add()
+		{
+			var viewModel = new participantViewModel
+			{
+				Courselist = _participantRepository.AllCourses() ?? new List<Course>()
+			};
+			return View(viewModel);
+		}
 
-            return View("Add", partcourse);
-        }
+		/// <summary>
+		/// Saves a new participant to the database.
+		/// </summary>
+		/// <param name="viewModel">The participant view model containing participant data.</param>
+		/// <returns>Redirects to Index on success, otherwise returns the Add view with validation errors.</returns>
+		[HttpPost]
+		public async Task<IActionResult> SaveData(participantViewModel viewModel)
+		{
+			if (!ModelState.IsValid)
+			{
+				viewModel.Courselist = _participantRepository.AllCourses() ?? new List<Course>();
+				return View("Add", viewModel);
+			}
 
-        public async Task<IActionResult> SaveData(participantViewModel P)
-        {
-            if (ModelState.IsValid)
-            {
-                if (P.ParCourseId != 0)
-                {
-                    Participants partis = new Participants();
-                    int? instId =  participantReposatory.GetInstractorId(P.ParCourseId);
-                    partis.Adress = P.Adress;
-                    partis.Age = P.Age;
-                    partis.Email = P.Email;
-                    partis.FullName = P.FullName;
-                    partis.Ediation = P.Ediation;
-                    partis.CourseId = P.ParCourseId;
-                    if (instId.HasValue)
-                        partis.InstractorId = instId.Value;
+			if (viewModel.ParCourseId == 0)
+			{
+				viewModel.Courselist = _participantRepository.AllCourses() ?? new List<Course>();
+				ModelState.AddModelError("ParCourseId", "Choose a Course");
+				return View("Add", viewModel);
+			}
 
-                     participantReposatory.Add(partis);
-                     participantReposatory.Save();
+			var participant = _mapper.Map<Participants>(viewModel);
 
-                  
-                    List<Student> students =  participantReposatory.AllStudents();
-                    string SKey = null;
-                    foreach (var item in students)
-                    {
-                        if (item.Email == partis.Email)
-                            SKey = item.SecurtyKey;
-                    }
+			// Get instructor ID and assign
+			int? instructorId = _participantRepository.GetInstractorId(viewModel.ParCourseId);
+			if (instructorId.HasValue)
+			{
+				participant.InstractorId = instructorId.Value;
+			}
 
-                    if (SKey != null)
-                    {
-                        var ParUser = await userManager.FindByIdAsync(SKey);
-                        if (ParUser != null)
-                        {
-                            switch(partis.CourseId)
-                            {
-                                    case 1:
-                                    var roleResult1 = await userManager.AddToRoleAsync(ParUser, "BackEnd");
-                                    if (!roleResult1.Succeeded)
-                                    {
-                                       
-                                        foreach (var error in roleResult1.Errors)
-                                        {
-                                            ModelState.AddModelError(string.Empty, error.Description);
-                                        }
-                                    }
-                                    break;
-                                    case 2:
-                                    var roleResult2 = await userManager.AddToRoleAsync(ParUser, "FrontEnd");
-                                    if (!roleResult2.Succeeded)
-                                    {
-                                      
-                                        foreach (var error in roleResult2.Errors)
-                                        {
-                                            ModelState.AddModelError(string.Empty, error.Description);
-                                        }
-                                    }
-                                    break;
-                                    case 3:
-                                    var roleResult3 = await userManager.AddToRoleAsync(ParUser, "FullStack");
-                                    if (!roleResult3.Succeeded)
-                                    {
-                                       
-                                        foreach (var error in roleResult3.Errors)
-                                        {
-                                            ModelState.AddModelError(string.Empty, error.Description);
-                                        }
-                                    }
-                                    break;
-                            }
-                               
-                          
-               
+			_participantRepository.Add(participant);
+			_participantRepository.Save();
 
-                
-                        }
-                    }
+			await AssignRoleBasedOnCourse(participant);
 
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    P.Courselist =  participantReposatory.AllCourses();
-                    ModelState.AddModelError("CourseId", "Choose a Course");
-                }
-            }
+			return RedirectToAction("Index");
+		}
 
-            return View("Add", P);
-        }
+		/// <summary>
+		/// Deletes a participant by their ID.
+		/// </summary>
+		/// <param name="id">The participant's ID.</param>
+		/// <returns>Redirects to Index after deletion.</returns>
+		public async Task<IActionResult> Delete(int id)
+		{
+			_participantRepository.DeletebyId(id);
+			_participantRepository.Save();
+			return RedirectToAction("Index");
+		}
 
+		/// <summary>
+		/// Displays the details of a participant.
+		/// </summary>
+		/// <param name="id">The participant's ID.</param>
+		/// <returns>The Details view with participant information.</returns>
+		public async Task<IActionResult> Details(int id)
+		{
+			var participant = _participantRepository.GetById(id);
+			return View(participant);
+		}
 
-        public async Task< IActionResult> Delete(int id)
-        {
-            participantReposatory.DeletebyId(id);
-            participantReposatory.Save();
-            return RedirectToAction("Index");
+		/// <summary>
+		/// Displays the form to edit a participant.
+		/// </summary>
+		/// <param name="id">The participant's ID.</param>
+		/// <returns>The Edit view with the participant view model.</returns>
+		public async Task<IActionResult> Edit(int id)
+		{
+			var participant = _participantRepository.GetById(id);
+			var viewModel = _mapper.Map<participantViewModel>(participant);
+			viewModel.Courselist = _participantRepository.AllCourses() ?? new List<Course>();
+			return View(viewModel);
+		}
 
-        }
-        public async Task< IActionResult> Details(int id)
-        {
-           var p=  participantReposatory.GetById(id);
-            return View(p);
-        }
-        public async Task<IActionResult> Edit(int  id)
-        {
-            var partis = participantReposatory.GetById(id);
-        
-            var courses = new List<Course>();
+		/// <summary>
+		/// Saves the edited participant data to the database.
+		/// </summary>
+		/// <param name="viewModel">The participant view model with updated data.</param>
+		/// <returns>Redirects to Index on success, otherwise returns the Edit view with validation errors.</returns>
+		[HttpPost]
+		public async Task<IActionResult> SaveEdite(participantViewModel viewModel)
+		{
+			if (!ModelState.IsValid)
+			{
+				viewModel.Courselist = _participantRepository.AllCourses() ?? new List<Course>();
+				return View("Edit", viewModel);
+			}
 
-            var partcourse = new participantViewModel();
+			if (viewModel.ParCourseId == 0)
+			{
+				viewModel.Courselist = _participantRepository.AllCourses() ?? new List<Course>();
+				ModelState.AddModelError("ParCourseId", "Choose a Course");
+				return View("Edit", viewModel);
+			}
 
-            partcourse.Id = partis.Id;
-            partcourse.Adress = partis.Adress;
-            partcourse.Age = partis.Age;
-            partcourse.Email = partis.Email;
-            partcourse.FullName = partis.FullName;
-            partcourse.Ediation = partis.Ediation;
-            partcourse.ParCourseId = partis.CourseId;
-            if (participantReposatory.AllCourses() != null)
-                partcourse.Courselist = participantReposatory.AllCourses();
+			var participant = _mapper.Map<Participants>(viewModel);
+			_participantRepository.Edit(participant);
+			_participantRepository.Save();
 
-            return View(partcourse);
-        }
+			return RedirectToAction("Index");
+		}
 
-        public async Task<IActionResult> SaveEdite(participantViewModel participantView)
-        {
-            if (ModelState.IsValid)
-            {
-                if (participantView.ParCourseId != 0)
-                {
-                    Participants partis = new Participants();
-                     partis.Id = participantView.Id;
-                    partis.Adress = participantView.Adress;
-                    partis.Age = participantView.Age;
-                    partis.Email = participantView.Email;
-                    partis.FullName = participantView.FullName;
-                    partis.Ediation = participantView.Ediation;
-                    partis.CourseId = participantView.ParCourseId;
-                  
-                     participantReposatory.Edit(partis);
-                     participantReposatory.Save();
+		/// <summary>
+		/// Assigns a role to the user based on the participant's course.
+		/// </summary>
+		/// <param name="participant">The participant entity.</param>
+		private async Task AssignRoleBasedOnCourse(Participants participant)
+		{
+			var students = _participantRepository.AllStudents();
+			var securityKey = students.FirstOrDefault(s => s.Email == participant.Email)?.SecurtyKey;
 
+			if (string.IsNullOrEmpty(securityKey)) return;
 
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                  
-                    ModelState.AddModelError("CourseId", "Choose a Course");
-                }
-            }
-            participantView.Courselist = participantReposatory.AllCourses();
-            return View("Edit", participantView);
-        }
+			var user = await _userManager.FindByIdAsync(securityKey);
+			if (user == null) return;
 
+			string roleName = participant.CourseId switch
+			{
+				1 => "BackEnd",
+				2 => "FrontEnd",
+				3 => "FullStack",
+				_ => null
+			};
 
-
-
-   
-
-
-    }
+			if (!string.IsNullOrEmpty(roleName))
+			{
+				var result = await _userManager.AddToRoleAsync(user, roleName);
+				if (!result.Succeeded)
+				{
+					foreach (var error in result.Errors)
+					{
+						ModelState.AddModelError(string.Empty, error.Description);
+					}
+				}
+			}
+		}
+	}
 }

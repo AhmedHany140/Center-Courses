@@ -1,214 +1,253 @@
-﻿using CenterDragon.Data;
+﻿using AutoMapper;
+using CenterDragon.Data;
+using CenterDragon.Interfaces;
 using CenterDragon.Models.Entites;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Newtonsoft.Json;
-using System.Collections;
 
-namespace CenterDragon.Controllers
+/// <summary>
+/// Controller responsible for handling messaging operations between students and secretaries.
+/// </summary>
+public class MessageController : Controller
 {
-    public class MessageController : Controller
-    {
-        private readonly ApplicationDbContext context;
-        private readonly UserManager<ApplicationUser> userManager;
-        private ApplicationUser currentuser { get; set; }
-        private Dictionary<string, List<string>> messagelist { get; set; }
-        public MessageController(ApplicationDbContext context,UserManager<ApplicationUser> userManager)
-        {
-            this.context = context;
-            this.userManager = userManager;
-            messagelist = new Dictionary<string, List<string>>();
-        }
+	private readonly IMessageRepository _messageRepository;
+	private readonly IStudentRepository _studentRepository;
+	private readonly ISecretaryRepository _secretaryRepository;
+	private readonly UserManager<ApplicationUser> _userManager;
+	private readonly IMapper _mapper;
 
-        public async Task< IActionResult> Index(string RecieverType, string? Contentvalue, string? coursename)
-        {
-            ViewBag.RecieverType = RecieverType;
-            ViewBag.Contentvalue = Contentvalue;
-            ViewBag.coursename = coursename;
-            return View();
-        }
-        public async Task<IActionResult>
-            AddMessage(Message message, string? RecieverType,string? Contentvalue,string? coursename)
-        {
-            if (RecieverType == "Secertary" && RecieverType is not null)
-            {
-                currentuser = await userManager.GetUserAsync(User);
-                var exest = await context.Students
-            .FirstOrDefaultAsync(x => x.SecurtyKey == currentuser.Id);
-                if (exest == null)
-                {
+	/// <summary>
+	/// Initializes a new instance of the <see cref="MessageController"/> class.
+	/// </summary>
+	/// <param name="messageRepository">The message repository.</param>
+	/// <param name="studentRepository">The student repository.</param>
+	/// <param name="secretaryRepository">The secretary repository.</param>
+	/// <param name="userManager">The user manager for application users.</param>
+	/// <param name="mapper">The AutoMapper instance.</param>
+	public MessageController(
+		IMessageRepository messageRepository,
+		IStudentRepository studentRepository,
+		ISecretaryRepository secretaryRepository,
+		UserManager<ApplicationUser> userManager,
+		IMapper mapper)
+	{
+		_messageRepository = messageRepository;
+		_studentRepository = studentRepository;
+		_secretaryRepository = secretaryRepository;
+		_userManager = userManager;
+		_mapper = mapper;
+	}
 
-                    var student = new Student()
-                    {
-                        FullName = currentuser.FullName,
-                        SecurtyKey = currentuser.Id,
-                        Email = currentuser.Email,
-                        password = currentuser.PasswordHash,
-                        Age = currentuser.Age,
-                        Ediation = currentuser.Ediation,
-                        Adress = currentuser.Adress
+	/// <summary>
+	/// Displays the message index page with optional receiver type, content, and course name.
+	/// </summary>
+	/// <param name="RecieverType">The type of the message receiver (student or secretary).</param>
+	/// <param name="Contentvalue">The content of the message (optional).</param>
+	/// <param name="coursename">The name of the course (optional).</param>
+	/// <returns>The Index view.</returns>
+	public IActionResult Index(string RecieverType, string? Contentvalue, string? coursename)
+	{
+		ViewBag.RecieverType = RecieverType;
+		ViewBag.Contentvalue = Contentvalue;
+		ViewBag.coursename = coursename;
+		return View();
+	}
 
-                    };
+	/// <summary>
+	/// Adds a new message to the database and redirects to the appropriate page.
+	/// </summary>
+	/// <param name="message">The message to add.</param>
+	/// <param name="RecieverType">The type of the message receiver.</param>
+	/// <param name="Contentvalue">The content of the message (optional).</param>
+	/// <param name="coursename">The name of the course (optional).</param>
+	/// <returns>Redirects to the Home or Secretary index page, or NotFound if the receiver is invalid.</returns>
+	public async Task<IActionResult> AddMessage(Message message, string? RecieverType, string? Contentvalue, string? coursename)
+	{
+		var currentUser = await _userManager.GetUserAsync(User);
 
-                    await context.Students.AddAsync(student);
-                    await context.SaveChangesAsync();
-                }
+		if (RecieverType == "Secertary" && RecieverType is not null)
+		{
+			return await HandleStudentToSecretaryMessage(currentUser, message, coursename);
+		}
+		else
+		{
+			return await HandleSecretaryToStudentMessage(currentUser, message, RecieverType, Contentvalue, coursename);
+		}
+	}
 
-        
-                var reciver = await context.Secretaries.FirstOrDefaultAsync();
+	/// <summary>
+	/// Shows messages for the current user, filtered by kind (student or secretary).
+	/// </summary>
+	/// <param name="kind">The kind of user ("student" or "secertary").</param>
+	/// <returns>The ShowMessages view with the relevant messages.</returns>
+	public async Task<IActionResult> ShowMessages(string? kind)
+	{
+		var currentUser = await _userManager.GetUserAsync(User);
+		var messagelist = new Dictionary<string, List<string>>();
 
-                var sender = await context.Students.
-                    FirstOrDefaultAsync(x => x.SecurtyKey == currentuser.Id);
-                 
+		if (kind?.ToLower() == "student")
+		{
+			var messages = await _messageRepository.GetMessagesForStudentAsync(currentUser.Id);
+			ProcessMessages(messages, messagelist);
+		}
+		else if (kind?.ToLower() == "secertary")
+		{
+			var messages = await _messageRepository.GetMessagesForSecretaryAsync(currentUser.Id);
+			ProcessMessages(messages, messagelist);
 
-                await context.Messages.AddAsync(new Message
-                {
-                    StudentSender = sender,
-                    Content = $"{message.Content} \n [course : {coursename}]",
-                    SecertaryReciver = reciver,
-                    Date = DateTime.Now,
-                    SenderName = sender.FullName,
-                    IsReplyed = false,
+			var stdSender = messages.Select(m => m.StudentSender).FirstOrDefault();
+			ViewBag.StdSender = stdSender;
+		}
 
-                });
-               await context.SaveChangesAsync();
+		ViewBag.allmessages = messagelist;
+		return View();
+	}
 
-                return RedirectToAction("Index", "Home"); 
+	/// <summary>
+	/// Processes a list of messages and organizes them by sender name.
+	/// </summary>
+	/// <param name="messages">The list of messages to process.</param>
+	/// <param name="messagelist">The dictionary to populate with sender names and their messages.</param>
+	private void ProcessMessages(List<Message> messages, Dictionary<string, List<string>> messagelist)
+	{
+		foreach (var m in messages)
+		{
+			if ((m.StudentReciver != null && m.SecertarySender != null) ||
+				(m.SecertaryReciver != null && m.StudentSender != null))
+			{
+				if (messagelist.ContainsKey(m.SenderName))
+				{
+					messagelist[m.SenderName].Add(m.Content);
+				}
+				else
+				{
+					messagelist[m.SenderName] = new List<string> { m.Content };
+				}
+			}
+		}
+	}
 
-            }
-            else
-            {
-                currentuser = await userManager.GetUserAsync(User);
-              
-               var reciever1=await context.Students.FirstOrDefaultAsync(x=>x.FullName== RecieverType);
+	/// <summary>
+	/// Handles sending a message from a student to a secretary.
+	/// </summary>
+	/// <param name="currentUser">The current application user.</param>
+	/// <param name="message">The message to send.</param>
+	/// <param name="coursename">The name of the course (optional).</param>
+	/// <returns>Redirects to the Home index page.</returns>
+	private async Task<IActionResult> HandleStudentToSecretaryMessage(ApplicationUser currentUser, Message message, string? coursename)
+	{
+		var student = await _studentRepository.GetStudentBySecurityKeyAsync(currentUser.Id);
+		if (student == null)
+		{
+			student = _mapper.Map<Student>(currentUser);
+			await _studentRepository.AddStudentAsync(student);
+		}
 
-                var reciever2 = await context.Secretaries.FirstOrDefaultAsync(x => x.FullName == RecieverType);
-                if (reciever1 != null)
-                {
-                    var sender = await context.Secretaries
-                        .FirstOrDefaultAsync(x => x.SecurtyKey == currentuser.Id);
-                    await context.Messages.AddAsync(new Message
-                    {
-                        SecertarySender = sender,
-                        Content = $"{message.Content} \n [course : {coursename}]",
-                        StudentReciver = reciever1,
-                        Date = DateTime.Now,
-                        SenderName = sender.FullName,
-                       
+		var secretary = await _secretaryRepository.GetFirstSecretaryAsync();
 
-                    });
+		await _messageRepository.AddMessageAsync(new Message
+		{
+			StudentSender = student,
+			Content = $"{message.Content} \n [course : {coursename}]",
+			SecertaryReciver = secretary,
+			Date = DateTime.Now,
+			SenderName = student.FullName,
+			IsReplyed = false,
+		});
 
-                    var mess =await context.Messages.Where(x => x.SecertaryReciver == sender)
-                        .ToListAsync();
-                    foreach (var item in mess)
-                    {
-                        if(item.Content==Contentvalue)
-                            item.IsReplyed = true;
-                    }
-                   await context.SaveChangesAsync();
-                    return RedirectToAction("Index", "Secrtary"); 
-                }
-                else if(reciever2 != null)
-                {
-                    var sender = await context.Students
-                      .FirstOrDefaultAsync(x => x.SecurtyKey == currentuser.Id);
-                    await context.Messages.AddAsync(new Message
-                    {
-                        StudentSender = sender,
-                        Content = $"{message.Content} \n [course : {coursename}]",
-                        SecertaryReciver = reciever2,
-                        Date = DateTime.Now,
-                        SenderName = sender.FullName,
-                      
+		return RedirectToAction("Index", "Home");
+	}
 
-                    });
+	/// <summary>
+	/// Handles sending a message from a secretary to a student or another secretary.
+	/// </summary>
+	/// <param name="currentUser">The current application user.</param>
+	/// <param name="message">The message to send.</param>
+	/// <param name="RecieverType">The receiver's security key.</param>
+	/// <param name="Contentvalue">The content of the message (optional).</param>
+	/// <param name="coursename">The name of the course (optional).</param>
+	/// <returns>Redirects to the appropriate index page or NotFound if the receiver is invalid.</returns>
+	private async Task<IActionResult> HandleSecretaryToStudentMessage(
+		ApplicationUser currentUser,
+		Message message,
+		string? RecieverType,
+		string? Contentvalue,
+		string? coursename)
+	{
+		var studentReciever = await _studentRepository.GetStudentBySecurityKeyAsync(RecieverType);
+		var secretaryReciever = await _secretaryRepository.GetSecretaryBySecurityKeyAsync(RecieverType);
 
-                    var mess = await context.Messages.Where(x => x.StudentReciver == sender)
-                   .ToListAsync();
-                    foreach (var item in mess)
-                    {
-                        if (item.Content == Contentvalue)
-                            item.IsReplyed = true;
-                    }
-                    await context.SaveChangesAsync();
-                    return RedirectToAction("Index", "Home"); 
-                }
+		if (studentReciever != null)
+		{
+			var secretarySender = await _secretaryRepository.GetSecretaryBySecurityKeyAsync(currentUser.Id);
 
+			await _messageRepository.AddMessageAsync(new Message
+			{
+				SecertarySender = secretarySender,
+				Content = $"{message.Content} \n [course : {coursename}]",
+				StudentReciver = studentReciever,
+				Date = DateTime.Now,
+				SenderName = secretarySender.FullName,
+			});
 
+			await MarkMessagesAsReplied(secretarySender, Contentvalue);
 
-                return NotFound();
-            }
-           
-           
+			return RedirectToAction("Index", "Secrtary");
+		}
+		else if (secretaryReciever != null)
+		{
+			var studentSender = await _studentRepository.GetStudentBySecurityKeyAsync(currentUser.Id);
 
+			await _messageRepository.AddMessageAsync(new Message
+			{
+				StudentSender = studentSender,
+				Content = $"{message.Content} \n [course : {coursename}]",
+				SecertaryReciver = secretaryReciever,
+				Date = DateTime.Now,
+				SenderName = studentSender.FullName,
+			});
 
+			await MarkMessagesAsReplied(studentSender, Contentvalue);
 
-        }
+			return RedirectToAction("Index", "Home");
+		}
 
-        public async Task<IActionResult> ShowMessages(string? kind)
-        {
-            currentuser = await userManager.GetUserAsync(User);
-            var userid = currentuser.Id;
+		return NotFound();
+	}
 
-            var messagelist = new Dictionary<string, List<string>>();
+	/// <summary>
+	/// Marks messages as replied for a given student.
+	/// </summary>
+	/// <param name="student">The student whose messages should be marked as replied.</param>
+	/// <param name="contentValue">The content value to match.</param>
+	private async Task MarkMessagesAsReplied(Student student, string contentValue)
+	{
+		var messages = await _messageRepository.GetMessagesForStudentAsync(student.SecurtyKey);
+		foreach (var item in messages)
+		{
+			if (item.Content == contentValue)
+			{
+				item.IsReplyed = true;
+				await _messageRepository.UpdateMessageAsync(item);
+			}
+		}
+	}
 
-            if (kind.ToLower() == "student")
-            {
-                var messages = await context.Messages.AsNoTracking()
-                    .Include(x => x.SecertarySender)  
-                    .Include(x => x.StudentReciver)   
-                    .Where(x => x.StudentReciver.SecurtyKey == userid && !x.IsReplyed)  
-                    .ToListAsync();
-
-                foreach (var m in messages)
-                {
-                    if (m.StudentReciver != null && m.SecertarySender != null)
-                    {
-                        if (messagelist.ContainsKey(m.SenderName))
-                        {
-                            messagelist[m.SenderName].Add(m.Content);
-                        }
-                        else
-                        {
-                            messagelist[m.SenderName] = new List<string> { m.Content };
-                        }
-                    }
-                }
-            }
-            else if (kind.ToLower() == "secertary")
-            {
-                var messages = await context.Messages.AsNoTracking()
-                    .Include(x => x.StudentSender)   
-                    .Include(x => x.SecertaryReciver) 
-                    .Where(x => x.SecertaryReciver.SecurtyKey == userid && !x.IsReplyed) 
-                    .ToListAsync();
-
-                var stdSender = messages.Select(m => m.StudentSender).FirstOrDefault();
-
-                 ViewBag.StdSender = stdSender;
-
-                foreach (var m in messages)
-                {
-                    if (m.SecertaryReciver != null && m.StudentSender != null)
-                    {
-                        if (messagelist.ContainsKey(m.SenderName))
-                        {
-                            messagelist[m.SenderName].Add(m.Content);
-                        }
-                        else
-                        {
-                            messagelist[m.SenderName] = new List<string> { m.Content };
-                        }
-                    }
-                }
-            }
-
-            ViewBag.allmessages = messagelist; 
-            return View();
-        }
-
-
-    }
+	/// <summary>
+	/// Marks messages as replied for a given secretary.
+	/// </summary>
+	/// <param name="secretary">The secretary whose messages should be marked as replied.</param>
+	/// <param name="contentValue">The content value to match.</param>
+	private async Task MarkMessagesAsReplied(Secertary secretary, string contentValue)
+	{
+		var messages = await _messageRepository.GetMessagesForSecretaryAsync(secretary.SecurtyKey);
+		foreach (var item in messages)
+		{
+			if (item.Content == contentValue)
+			{
+				item.IsReplyed = true;
+				await _messageRepository.UpdateMessageAsync(item);
+			}
+		}
+	}
 }

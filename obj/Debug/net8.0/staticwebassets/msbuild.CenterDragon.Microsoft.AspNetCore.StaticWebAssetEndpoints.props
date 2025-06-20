@@ -4,13 +4,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CenterDragon.sqyejellyh.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ZCKUOkGb0ShfWDPzPoSUQqABw9/pdM4VuXb2jA\u002BIha4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ZCKUOkGb0ShfWDPzPoSUQqABw9/pdM4VuXb2jA\u002BIha4=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Sep 2024 12:58:11 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ZCKUOkGb0ShfWDPzPoSUQqABw9/pdM4VuXb2jA\u002BIha4=\u0022"},{"Name":"Last-Modified","Value":"Fri, 20 Jun 2025 10:03:33 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CenterDragon/CenterDragon.sqyejellyh.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CenterDragon.sqyejellyh.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"sqyejellyh"},{"Name":"integrity","Value":"sha256-ZCKUOkGb0ShfWDPzPoSUQqABw9/pdM4VuXb2jA\u002BIha4="},{"Name":"label","Value":"_content/CenterDragon/CenterDragon.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ZCKUOkGb0ShfWDPzPoSUQqABw9/pdM4VuXb2jA\u002BIha4=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Sep 2024 12:58:11 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1130"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022ZCKUOkGb0ShfWDPzPoSUQqABw9/pdM4VuXb2jA\u002BIha4=\u0022"},{"Name":"Last-Modified","Value":"Fri, 20 Jun 2025 10:03:33 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CenterDragon/css/site.0nqakdvh8o.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>

@@ -3,8 +3,100 @@
   "WorkspaceRootPath": "D:\\my projects\\CenterDragon\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\reposatories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:reposatories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\reposatories\\secretaryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:reposatories\\secretaryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\reposatories\\participantreposatory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:reposatories\\participantreposatory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\reposatories\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:reposatories\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\interfaces\\isecretaryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:interfaces\\isecretaryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\interfaces\\iparticipantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:interfaces\\iparticipantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\interfaces\\imessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:interfaces\\imessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\data\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:data\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\controllers\\secrtarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:controllers\\secrtarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\controllers\\participantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:controllers\\participantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\centerdragon.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:centerdragon.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\profiles\\studentprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:profiles\\studentprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\profiles\\participantprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:profiles\\participantprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\view models\\participantviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:view models\\participantviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\models\\configurations\\participantconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:models\\configurations\\participantconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\models\\configurations\\instractorconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:models\\configurations\\instractorconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\models\\configurations\\courseconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:models\\configurations\\courseconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\models\\configurations\\adminconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:models\\configurations\\adminconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\models\\entites\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,12 +115,36 @@
       "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:models\\entites\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\models\\entites\\instractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:models\\entites\\instractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\models\\entites\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:models\\entites\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\models\\entites\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:models\\entites\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\views\\course\\backendend.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:views\\course\\backendend.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\views\\course\\fullstack.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:views\\course\\fullstack.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\views\\course\\frontpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:views\\course\\frontpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\views\\secrtary\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:views\\secrtary\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|d:\\my projects\\centerdragon\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9F30A940-C2A6-4C74-B78B-34DE82D3CA53}|CenterDragon.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +154,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,20 +170,382 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ISecretaryRepository.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Interfaces\\ISecretaryRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\ISecretaryRepository.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Interfaces\\ISecretaryRepository.cs",
+              "RelativeToolTip": "Interfaces\\ISecretaryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T10:43:30.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IMessageRepository.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Interfaces\\IMessageRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IMessageRepository.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Interfaces\\IMessageRepository.cs",
+              "RelativeToolTip": "Interfaces\\IMessageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T10:43:28.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "StudentProfile.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Profiles\\StudentProfile.cs",
+              "RelativeDocumentMoniker": "Profiles\\StudentProfile.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Profiles\\StudentProfile.cs",
+              "RelativeToolTip": "Profiles\\StudentProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T09:51:50.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ParticipantProfile.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Profiles\\ParticipantProfile.cs",
+              "RelativeDocumentMoniker": "Profiles\\ParticipantProfile.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Profiles\\ParticipantProfile.cs",
+              "RelativeToolTip": "Profiles\\ParticipantProfile.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T09:39:55.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CenterDragon.csproj",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\CenterDragon.csproj",
+              "RelativeDocumentMoniker": "CenterDragon.csproj",
+              "ToolTip": "D:\\my projects\\CenterDragon\\CenterDragon.csproj",
+              "RelativeToolTip": "CenterDragon.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-20T09:31:50.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentRepository.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Reposatories\\StudentRepository.cs",
+              "RelativeDocumentMoniker": "Reposatories\\StudentRepository.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Reposatories\\StudentRepository.cs",
+              "RelativeToolTip": "Reposatories\\StudentRepository.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAmwCUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T09:18:32.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SecretaryRepository.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Reposatories\\SecretaryRepository.cs",
+              "RelativeDocumentMoniker": "Reposatories\\SecretaryRepository.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Reposatories\\SecretaryRepository.cs",
+              "RelativeToolTip": "Reposatories\\SecretaryRepository.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAmwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T09:18:18.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MessageRepository.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Reposatories\\MessageRepository.cs",
+              "RelativeDocumentMoniker": "Reposatories\\MessageRepository.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Reposatories\\MessageRepository.cs",
+              "RelativeToolTip": "Reposatories\\MessageRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAmwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T09:18:14.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Data\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationUser.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Data\\ApplicationUser.cs",
+              "RelativeToolTip": "Data\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T09:13:56.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T09:13:55.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SecrtaryController.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Controllers\\SecrtaryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SecrtaryController.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Controllers\\SecrtaryController.cs",
+              "RelativeToolTip": "Controllers\\SecrtaryController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwAwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T09:07:51.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MessageController.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Controllers\\MessageController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MessageController.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Controllers\\MessageController.cs",
+              "RelativeToolTip": "Controllers\\MessageController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:48:51.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAQwCsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:48:07.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CourseController.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "Controllers\\CourseController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:47:06.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAuwHMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:46:10.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ParticipantController.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Controllers\\ParticipantController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ParticipantController.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Controllers\\ParticipantController.cs",
+              "RelativeToolTip": "Controllers\\ParticipantController.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAwFgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:45:45.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "participantViewModel.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\View Models\\participantViewModel.cs",
+              "RelativeDocumentMoniker": "View Models\\participantViewModel.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\View Models\\participantViewModel.cs",
+              "RelativeToolTip": "View Models\\participantViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:29:56.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ParticipantReposatory.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Reposatories\\ParticipantReposatory.cs",
+              "RelativeDocumentMoniker": "Reposatories\\ParticipantReposatory.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Reposatories\\ParticipantReposatory.cs",
+              "RelativeToolTip": "Reposatories\\ParticipantReposatory.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAYwHoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:29:10.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IParticipantRepository.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Interfaces\\IParticipantRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IParticipantRepository.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Interfaces\\IParticipantRepository.cs",
+              "RelativeToolTip": "Interfaces\\IParticipantRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:28:10.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "participantConfigurations.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Models\\Configurations\\participantConfigurations.cs",
+              "RelativeDocumentMoniker": "Models\\Configurations\\participantConfigurations.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Models\\Configurations\\participantConfigurations.cs",
+              "RelativeToolTip": "Models\\Configurations\\participantConfigurations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:28:01.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "InstractorConfiguration.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Models\\Configurations\\InstractorConfiguration.cs",
+              "RelativeDocumentMoniker": "Models\\Configurations\\InstractorConfiguration.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Models\\Configurations\\InstractorConfiguration.cs",
+              "RelativeToolTip": "Models\\Configurations\\InstractorConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:28:00.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CourseConfiguration.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Models\\Configurations\\CourseConfiguration.cs",
+              "RelativeDocumentMoniker": "Models\\Configurations\\CourseConfiguration.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Models\\Configurations\\CourseConfiguration.cs",
+              "RelativeToolTip": "Models\\Configurations\\CourseConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:27:58.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AdminConfiguration.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Models\\Configurations\\AdminConfiguration.cs",
+              "RelativeDocumentMoniker": "Models\\Configurations\\AdminConfiguration.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Models\\Configurations\\AdminConfiguration.cs",
+              "RelativeToolTip": "Models\\Configurations\\AdminConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:27:55.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:27:51.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Instractor.cs",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Models\\Entites\\Instractor.cs",
+              "RelativeDocumentMoniker": "Models\\Entites\\Instractor.cs",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Models\\Entites\\Instractor.cs",
+              "RelativeToolTip": "Models\\Entites\\Instractor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-20T08:27:44.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "BackEndEnd.cshtml",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Views\\Course\\BackEndEnd.cshtml",
+              "RelativeDocumentMoniker": "Views\\Course\\BackEndEnd.cshtml",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Views\\Course\\BackEndEnd.cshtml",
+              "RelativeToolTip": "Views\\Course\\BackEndEnd.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T08:27:22.863Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "FullStack.cshtml",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Views\\Course\\FullStack.cshtml",
+              "RelativeDocumentMoniker": "Views\\Course\\FullStack.cshtml",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Views\\Course\\FullStack.cshtml",
+              "RelativeToolTip": "Views\\Course\\FullStack.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T08:27:14.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Frontpage.cshtml",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Views\\Course\\Frontpage.cshtml",
+              "RelativeDocumentMoniker": "Views\\Course\\Frontpage.cshtml",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Views\\Course\\Frontpage.cshtml",
+              "RelativeToolTip": "Views\\Course\\Frontpage.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T08:27:06.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\my projects\\CenterDragon\\Views\\Secrtary\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Secrtary\\Index.cshtml",
+              "ToolTip": "D:\\my projects\\CenterDragon\\Views\\Secrtary\\Index.cshtml",
+              "RelativeToolTip": "Views\\Secrtary\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-20T08:26:32.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\my projects\\CenterDragon\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "D:\\my projects\\CenterDragon\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-19T10:13:46.115Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T10:13:46.115Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 24,
               "Title": "Student.cs",
               "DocumentMoniker": "D:\\my projects\\CenterDragon\\Models\\Entites\\Student.cs",
               "RelativeDocumentMoniker": "Models\\Entites\\Student.cs",
@@ -75,12 +553,11 @@
               "RelativeToolTip": "Models\\Entites\\Student.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T10:12:34.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T10:12:34.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 25,
               "Title": "Secuertary.cs",
               "DocumentMoniker": "D:\\my projects\\CenterDragon\\Models\\Entites\\Secuertary.cs",
               "RelativeDocumentMoniker": "Models\\Entites\\Secuertary.cs",
@@ -88,12 +565,11 @@
               "RelativeToolTip": "Models\\Entites\\Secuertary.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T10:12:33.275Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T10:12:33.275Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 26,
               "Title": "Participants.cs",
               "DocumentMoniker": "D:\\my projects\\CenterDragon\\Models\\Entites\\Participants.cs",
               "RelativeDocumentMoniker": "Models\\Entites\\Participants.cs",
@@ -101,12 +577,11 @@
               "RelativeToolTip": "Models\\Entites\\Participants.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T10:12:32.418Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T10:12:32.418Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 27,
               "Title": "Message.cs",
               "DocumentMoniker": "D:\\my projects\\CenterDragon\\Models\\Entites\\Message.cs",
               "RelativeDocumentMoniker": "Models\\Entites\\Message.cs",
@@ -114,12 +589,11 @@
               "RelativeToolTip": "Models\\Entites\\Message.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T10:12:31.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T10:12:31.728Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 29,
               "Title": "Course.cs",
               "DocumentMoniker": "D:\\my projects\\CenterDragon\\Models\\Entites\\Course.cs",
               "RelativeDocumentMoniker": "Models\\Entites\\Course.cs",
@@ -127,12 +601,11 @@
               "RelativeToolTip": "Models\\Entites\\Course.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T10:12:29.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T10:12:29.211Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 30,
               "Title": "Admin.cs",
               "DocumentMoniker": "D:\\my projects\\CenterDragon\\Models\\Entites\\Admin.cs",
               "RelativeDocumentMoniker": "Models\\Entites\\Admin.cs",
@@ -140,8 +613,7 @@
               "RelativeToolTip": "Models\\Entites\\Admin.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T10:12:27.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T10:12:27.618Z"
             }
           ]
         }

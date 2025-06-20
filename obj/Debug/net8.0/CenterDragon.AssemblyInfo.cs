@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CenterDragon")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec665a6116faf0fdaa0e17d2016ad3fcbcfbc5d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("CenterDragon")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CenterDragon")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
